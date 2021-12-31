@@ -108,7 +108,7 @@ spec:
   git:
     type: github
     apiUrl: ""
-    repository: tmax-cloud/bookinfo-common
+    repository: changju-test/bookinfo-common
     token:
       valueFrom:
         secretKeyRef:
