@@ -112,7 +112,7 @@ spec:
     token:
       valueFrom:
         secretKeyRef:
-          name: yxzzzxh-git-token
+          name: git-token
           key: token
   workspaces:
   - name : common-workspace
