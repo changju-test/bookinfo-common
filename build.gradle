@@ -46,7 +46,7 @@ publishing {
         bookLibrary(MavenPublication) {
             groupId = 'org.tmaxcloud.sample.msa.book'
             artifactId = 'common-test'
-            version = '0.0.4'
+            version = '0.0.1'
             from components.java
         }
     }
