@@ -38,6 +38,7 @@ test {
 
 jar {
     archiveFileName.set("common.jar")
+//     test
 }
 
 publishing {
