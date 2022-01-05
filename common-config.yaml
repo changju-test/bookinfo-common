@@ -130,27 +130,27 @@ spec:
         when:
           branch: 
           - main
-      - name: code-analysis
-        tektonTask:
-          taskRef:
-            local:
-              name: sonarqube-scanner
-              kind: Task
-          params:
-          - name: SONAR_HOST_URL
-            stringVal: http://sonarqube.172.22.11.16.nip.io
-          - name: SONAR_PROJECT_KEY
-            stringVal: common-sonar
-          workspaces:
-          - name: source-dir
-            workspace: common-workspace
-          - name: sonar-settings
-            workspace: sonar-settings
-        after:
-        - copy-source
-        when:
-          branch: 
-          - main
+#      - name: code-analysis
+#        tektonTask:
+#          taskRef:
+#            local:
+#              name: sonarqube-scanner
+#              kind: Task
+#          params:
+#          - name: SONAR_HOST_URL
+#            stringVal: http://sonarqube.172.22.11.16.nip.io
+#          - name: SONAR_PROJECT_KEY
+#            stringVal: common-sonar
+#          workspaces:
+#          - name: source-dir
+#            workspace: common-workspace
+#          - name: sonar-settings
+#            workspace: sonar-settings
+#        after:
+#        - copy-source
+#        when:
+#          branch:
+#          - main
     postSubmit:
       - name: gradle-build-and-publish
         image: docker.io/gradle:7.3.1-jdk11
@@ -158,3 +158,6 @@ spec:
           gradle build
           gradle sonarqube
           gradle publish
+        when:
+          branch:
+            - main
